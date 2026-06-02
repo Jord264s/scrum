@@ -1,0 +1,55 @@
+/* Brutalist variant — per-lane color coding
+   Each lane gets a subtle accent wash + a thick top stripe in the
+   project's accent color. Black borders & drop shadows stay intact. */
+
+body.variant-brutal .lane {
+  background: color-mix(in srgb, var(--accent) 7%, #FFFDF6) !important;
+  border-top: 6px solid var(--accent) !important;
+  /* border-radius stays 0 from base brutalist */
+}
+
+body.variant-brutal .lane-head {
+  background: color-mix(in srgb, var(--accent) 14%, #FFFDF6) !important;
+  border-right: 2px solid #0B0B0B !important;
+}
+body.variant-brutal .lane-head::before {
+  /* The thick top stripe replaces the old left edge */
+  width: 0 !important;
+}
+
+body.variant-brutal .lane-dot {
+  background: var(--accent) !important;
+  border: 1.5px solid #0B0B0B !important;
+}
+
+/* Subtle accent wash on the cells too, so the color follows
+   horizontally across all four columns. */
+body.variant-brutal .cell {
+  background: color-mix(in srgb, var(--accent) 4%, transparent) !important;
+}
+
+/* The drop-target highlight should still read clearly above the tint. */
+body.variant-brutal .cell.is-over {
+  background: #F5C82E !important;
+  box-shadow: inset 0 0 0 2px #0B0B0B !important;
+}
+
+/* Lane code badge picks up the accent so the abbreviation lines up
+   with the stripe color (still black-bordered, so it stays brutalist). */
+body.variant-brutal .lane-code {
+  background: var(--accent) !important;
+  color: #FFFDF6 !important;
+  border: 1.5px solid #0B0B0B !important;
+}
+
+/* Card base stays cream so cards still POP against the tinted lane bg.
+   The accent comes through via the lane wash + the top stripe. */
+body.variant-brutal .card {
+  background: #FFFDF6 !important;
+}
+
+/* Add-card placeholder slot: tint just a touch so it feels part of the lane */
+body.variant-brutal .add-card:hover {
+  background: color-mix(in srgb, var(--accent) 10%, #FFFDF6) !important;
+  border-color: #0B0B0B !important;
+}
